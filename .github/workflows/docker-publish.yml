@@ -25,6 +25,9 @@ jobs:
           - name: edcvagent
             dockerfile: docker/Dockerfile.edcvagent.dockerfile
             context: .
+          - name: ihagent
+            dockerfile: docker/Dockerfile.ihagent.dockerfile
+            context: .
           - name: kcagent
             dockerfile: docker/Dockerfile.kcagent.dockerfile
             context: .
@@ -37,9 +40,6 @@ jobs:
           - name: pmanager
             dockerfile: docker/Dockerfile.pmanager.dockerfile
             context: .
-          #          - name: testagent
-          #            dockerfile: docker/Dockerfile.testagent.dockerfile
-          #            context: .
           - name: tmanager
             dockerfile: docker/Dockerfile.tmanager.dockerfile
             context: .
