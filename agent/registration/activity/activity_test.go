@@ -17,6 +17,7 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/eclipse-cfm/cfm/agent/common/issuerservice"
 	"github.com/eclipse-cfm/cfm/common/model"
 	"github.com/eclipse-cfm/cfm/common/system"
 	"github.com/eclipse-cfm/cfm/pmanager/api"
@@ -205,13 +206,16 @@ type MockIssuerService struct {
 	recorded      regData
 }
 
+func (m *MockIssuerService) QueryCredentialsByType(ctx context.Context, participantContextID string, credentialType string) ([]issuerservice.IssuerCredentialResourceDto, error) {
+	return nil, nil
+}
+
 func (m *MockIssuerService) DeleteHolder(ctx context.Context, holderID string) error {
 	return m.expectedError
 }
 
 func (m *MockIssuerService) RevokeCredential(ctx context.Context, participantContextID string, credentialID string) error {
-	//TODO implement me
-	panic("implement me")
+	return nil
 }
 
 func (m *MockIssuerService) CreateHolder(ctx context.Context, did string, holderID string, name string) error {
